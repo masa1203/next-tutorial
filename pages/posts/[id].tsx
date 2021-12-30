@@ -39,7 +39,11 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({
+  params,
+}: {
+  params: { id: string };
+}) => {
   // idを取得する
   const postData = await getPostData(params.id);
   return {
